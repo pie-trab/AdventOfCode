@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iosfwd>
 #include <fstream>
 #include <string>
 
@@ -17,11 +16,12 @@ int main(int argc, char const *argv[])
         sum += (int)(strip_str.at(0) - '0') * 10 + (int)(strip_str.at(strip_str.length() - 1) - '0');
     }
 
-    std::cout << sum << '\n';
+    std::cout << sum << std::endl;
 
     return 0;
 }
 
+// strips out all non digit character
 std::string strip_string(std::string str)
 {
     std::string out;
