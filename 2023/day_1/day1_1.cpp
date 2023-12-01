@@ -1,8 +1,9 @@
 #include <iostream>
+#include <iosfwd>
 #include <fstream>
 #include <string>
 
-std::string strip_string(std::string str);
+std::string strip_string(std::string);
 
 int main(int argc, char const *argv[])
 {
