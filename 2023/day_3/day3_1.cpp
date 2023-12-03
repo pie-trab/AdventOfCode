@@ -3,8 +3,6 @@
 #include <string>
 #include <vector>
 
-int heigth{140};
-int length{140};
 std::vector<std::string> matrix;
 
 bool is_valid_char(int line, const int column)
