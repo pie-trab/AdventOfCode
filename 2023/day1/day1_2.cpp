@@ -6,8 +6,7 @@
 std::string strip_string(std::string);
 void replace_words_digits(std::string&);
 
-int main(int argc, char const* argv[])
-{
+int main(int argc, char const* argv[]) {
     std::ifstream calibration_value("input.txt", std::ios::out);
 
     std::string str;
@@ -30,8 +29,7 @@ int main(int argc, char const* argv[])
 }
 
 // strips out all non digit character
-std::string strip_string(std::string str)
-{
+std::string strip_string(std::string str) {
     std::string out;
     for (int i = 0; i < str.length(); i++) {
         if (isdigit(str[i])) {
@@ -49,17 +47,8 @@ std::string strip_string(std::string str)
 // this handles strings like threeightwo'
 // the possible eccess characters will be stripped out by
 // strip_string function
-void replace_words_digits(std::string& str)
-{
-    std::vector<std::string> s = {"one",
-                                  "two",
-                                  "three",
-                                  "four",
-                                  "five",
-                                  "six",
-                                  "seven",
-                                  "eight",
-                                  "nine"};
+void replace_words_digits(std::string& str) {
+    std::vector<std::string> s = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
     for (int i = 0; i < s.size(); i++) {
         while (str.find(s.at(i)) != std::string::npos) {
