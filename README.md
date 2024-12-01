@@ -1,3 +1,3 @@
 Advent of Code
 ====
-My solutions for Advent of Code.
+My (bad) solutions for Advent of Code.

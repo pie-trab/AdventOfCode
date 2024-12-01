@@ -9,12 +9,16 @@ const int MAX_RED = 12, MAX_GREEN = 13, MAX_BLUE = 14;
 void format_string(std::string&);
 bool count_cubes(std::string& str);
 
-int main(int argc, char const* argv[])
-{
+int main(int argc, char const* argv[]) {
     std::ifstream game_list("input.txt", std::ios::out);
     std::string str;
     int count = 0, i = 1;
     bool is_valid = false;
+
+    // Game 1: 1 blue, 1 red; 10 red; 8 red, 1 blue, 1 green; 1 green, 5 blue
+    // call format string
+    // 1 blue, 1 red; 10 red; 8 red, 1 blue, 1 green; 1 green, 5 blue
+    //
 
     while (getline(game_list, str)) {
         format_string(str);
@@ -28,7 +32,6 @@ int main(int argc, char const* argv[])
         }
 
         if (is_valid) {
-            std::cout << "i: " << i << '\n';
             count += i;
         }
         i++;
@@ -39,14 +42,13 @@ int main(int argc, char const* argv[])
     return 0;
 }
 
-void format_string(std::string& str)
-{
+void format_string(std::string& str) {
     str = str.substr(str.find(':') + 1, str.length() - 1);
 }
 
-bool count_cubes(std::string& str)
-{
+bool count_cubes(std::string& str) {
     int red{0}, green{0}, blue{0};
+
     if (str.find("red") != std::string::npos) {
         red = stoi(str.substr(str.find("red") - 3, 2));
     }
