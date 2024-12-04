@@ -1,0 +1,101 @@
+['M']
+['A' 'S']
+['M' 'S' 'A']
+['X' 'M' 'M' 'M']
+['M' 'M' 'A' 'S' 'X']
+['A' 'M' 'S' 'A' 'M' 'X']
+['S' 'M' 'A' 'M' 'M' 'X' 'S']
+['A' 'S' 'A' 'X' 'S' 'X' 'M' 'M']
+['M' 'A' 'X' 'X' 'M' 'A' 'S' 'A' 'M']
+['S' 'M' 'S' 'A' 'M' 'S' 'A' 'M' 'M']
+['A' 'M' 'A' 'S' 'M' 'A' 'S' 'A']
+['M' 'X' 'M' 'M' 'A' 'M' 'M']
+['X' 'M' 'A' 'S' 'X' 'X']
+['A' 'M' 'X' 'M' 'X']
+['X' 'M' 'A' 'S']
+['M' 'A' 'S']
+['X' 'M']
+['M']
+19
+@pie-trab ➜ /workspaces/AdventOfCode/2024/day4 (main) $ python3 test.py
+['M']
+['M' 'X']
+['S' 'A' 'M']
+['S' 'A' 'M' 'X']
+['X' 'M' 'X' 'M' 'A']
+['X' 'X' 'S' 'A' 'M' 'X']
+['M' 'M' 'A' 'M' 'M' 'X' 'M']
+['A' 'S' 'A' 'M' 'S' 'A' 'M' 'A']
+['M' 'M' 'A' 'S' 'M' 'A' 'S' 'M' 'S']
+['M' 'S' 'X' 'M' 'A' 'X' 'S' 'A' 'M' 'X']
+['M' 'A' 'S' 'A' 'M' 'X' 'X' 'A' 'M']
+['M' 'M' 'X' 'S' 'X' 'A' 'S' 'A']
+['S' 'X' 'M' 'M' 'A' 'M' 'S']
+['X' 'M' 'A' 'S' 'M' 'A']
+['X' 'S' 'A' 'M' 'M']
+['M' 'M' 'M' 'X']
+['A' 'S' 'M']
+['S' 'A']
+['M']
+['M']
+['A' 'S']
+['M' 'S' 'A']
+['X' 'M' 'M' 'M']
+['M' 'M' 'A' 'S' 'X']
+['A' 'M' 'S' 'A' 'M' 'X']
+['S' 'M' 'A' 'M' 'M' 'X' 'S']
+['A' 'S' 'A' 'X' 'S' 'X' 'M' 'M']
+['M' 'A' 'X' 'X' 'M' 'A' 'S' 'A' 'M']
+['S' 'M' 'S' 'A' 'M' 'S' 'A' 'M' 'M']
+['A' 'M' 'A' 'S' 'M' 'A' 'S' 'A']
+['M' 'X' 'M' 'M' 'A' 'M' 'M']
+['X' 'M' 'A' 'S' 'X' 'X']
+['A' 'M' 'X' 'M' 'X']
+['X' 'M' 'A' 'S']
+['M' 'A' 'S']
+['X' 'M']
+['M']
+
+
+
+
+
+
+0 1 2 3 4 5 6 7 8 9
+M M M S X X M A S M
+M S A M X M S M S A
+A M X S X M A A M M
+M S A M A S M S M X
+X M A S A M X A M M
+X X A M M X X A M A
+S M S M S A S X S S
+S A X A M A S A A A
+M A M M M X M M M M
+M X M X A X M A S X
+
+
+
+
+
+
+
+
+
+
+
+. . . . X X M A S .
+. S A M X M S . . .
+. . . S . . A . . .
+. . A . A . M S . X
+X M A S A M X . M M
+X . . . . . X A . A
+S . S . S . S . S S
+. A . A . A . A . A
+. . M . M . M . M M
+. X . X . X M A S X
+
+
+
+
+
+
