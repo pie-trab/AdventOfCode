@@ -1,32 +1,30 @@
 import numpy as np
-import re
-from scipy.ndimage import rotate
-
-def arr_to_str(arr: list):
-    return ''.join(arr)
-
-
-def find_skewed(matrix: list):
-    
-
 
 with open('./input.txt', 'r') as file_in:
     txt = [*str(file_in.read()).replace('\n','')]
 
-matrix = np.array(txt).reshape(140,140)
+matrice = np.array(txt).reshape(140,140)
 
 
-total_sum = 0
-for count in range(3):
-    for i in matrix:
-        total_sum += len(re.findall(r'XMAS', arr_to_str(i)))
-        total_sum += len(re.findall(r'XMAS', arr_to_str(i)[::-1]))
-    
-    total_sum += find_skewed(matrix)
-    print(matrix)
-    matrix = np.rot90(matrix)
-    print('-------')
+# orizontal and vertical
+tot = 0
+for i in matrice:
+    tot += ''.join(i).count('XMAS') + ''.join(i).count('SAMX')
+
+for i in np.rot90(matrice):
+    tot += ''.join(i).count('XMAS') + ''.join(i).count('SAMX')
 
 
+# diagonals
+# up left -> down rigth
+for i in range(-int(len(matrice[0])), int(len(matrice[0]))):
+    tot += ''.join(np.diag(matrice, k=i)).count('XMAS') + ''.join(np.diag(matrice, k=i)).count('SAMX')
 
-print(total_sum)
+mat_rot = np.rot90(matrice)
+
+# up rigth -> down left
+for i in range(-int(len(mat_rot[0])), int(len(mat_rot[0]))):
+    tot += ''.join(np.diag(mat_rot, k=i)).count('XMAS') + ''.join(np.diag(mat_rot, k=i)).count('SAMX')
+
+print(tot)
+
