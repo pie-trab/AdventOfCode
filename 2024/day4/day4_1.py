@@ -6,7 +6,7 @@ with open('./input.txt', 'r') as file_in:
 matrice = np.array(txt).reshape(140,140)
 
 
-# orizontal and vertical
+# horizontal and vertical
 tot = 0
 for i in matrice:
     tot += ''.join(i).count('XMAS') + ''.join(i).count('SAMX')
