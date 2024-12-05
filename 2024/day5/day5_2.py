@@ -33,10 +33,3 @@ for i in valid_manuals:
     sum += int(i[int(len(i)/2)])
 
 print(sum)
-
-
-
-
-
-
-
