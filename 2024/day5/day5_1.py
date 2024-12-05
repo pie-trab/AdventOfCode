@@ -19,7 +19,7 @@ for manual in manual_list:
             rule: 75|53 -> (75>53)
             '''
             if manual[i] in rule[0] and rule[1] in manual:
-                
+                print('')
     
     
 
