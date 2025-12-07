@@ -1,48 +1,54 @@
-import numpy as np
-
 lines = []
 
 with open("input.txt") as file:
     for line in file:
-        lines.append(line.strip().split(" "))
+        lines.append(line.strip('\n'))
+
+operators = lines[-1] + " "
+lines = lines[:-1]
+
+sizes = []
+count = 0
+for i in operators[::-1]:
+    count+=1
+    if i != " ": 
+        # (size, operator)
+        sizes.append((count-1, i))
+        count = 0
+        
+sizes = sizes[::-1]
+
+numbers = []
+for line in lines:
+    start = 0
+    end = 0
+    count = 0
+    line_list = []
+    for i in range(len(sizes)):
+        end = sizes[i][0]+count
+        line_list.append(line[start:end])
+        count += len(line[start:end]) + 1
+        start = count
+    numbers.append(line_list)
+
+columns = [[] for _ in range(len(numbers[0]))]
+
+for line in numbers:
+    for i, number in enumerate(line):
+        columns[i].append(number)
+
+total = 0
+for i, col in enumerate(columns):
+    if sizes[i][1] == "*": sum = 1
+    if sizes[i][1] == "+": sum = 0
+    for j in range(sizes[i][0]):
+        partial = ""
+        for n in range(len(col)):
+            partial += col[n][j]
+        if sizes[i][1] == "*": sum *= int(partial.strip())
+        if sizes[i][1] == "+": sum += int(partial.strip())
+    total+=sum
+
+print(total)
 
 
-operators = [[item for item in x if item] for x in lines[-1:]][0]
-lines = [[item for item in x if item] for x in lines[:-1]]
-
-maxes = [-1] * len(lines[0])
-for i in lines:
-    for index, j in enumerate(i):
-        if len(j) > maxes[index]: maxes[index] = len(j) 
-
-print(maxes)
-
-for i, line in enumerate(lines):
-    for j, num in enumerate(line):
-        lines[i][j] = num.rjust(maxes[j], '0')
-
-
-print(lines)
-
-'''
-123 328  51 64 
- 45 64  387 23 
-  6 98  215 314
-*   +   *   +  
-'''
-
-results = [int(item) for item in lines[0]]
-partial = []
-for j in range(len(lines[0])):
-    a = []
-    for i in range(len(lines)):
-        a.append(lines[i][j])
-    partial.append(a)
-
-
-
-
-'''
-            if operators[j] == "*": results[j] *= int(num)
-            if operators[j] == "+": results[j] += int(num)
-'''
